@@ -22,7 +22,7 @@ public class information {
 		Scanner userInput = new Scanner(System.in);
 		String Firstname;
 		String Lastname;
-		String StudentID;
+		int StudentID;
 		String School;
 		int Grade;
 		
@@ -38,7 +38,7 @@ public class information {
 		Grade=userInput.nextInt();
 		
 		System.out.print("What is your Student ID?");
-		StudentID=userInput.next();
+		StudentID=userInput.nextInt();
 		
 		System.out.print("What is your School Average?");
 		School=userInput.next();
@@ -47,11 +47,11 @@ public class information {
 		userInput.next();
 		
 		System.out.println("\n"+"Your information:");
-		System.out.println(String.format("      Login:%15s",Lastname+Firstname+StudentID));
-		System.out.println(String.format("      ID:%12s",StudentID));
-		System.out.println(String.format("      Name:%10s",Firstname+Lastname));
-		System.out.println(String.format("      Average:%4.5s",School));
-		System.out.println(String.format("      Grade:%6s",Grade));
+		System.out.println(String.format("%-15s"+Lastname+Firstname+"_ "+StudentID,"Login:"));
+		System.out.println(String.format("%-15s"+StudentID,"ID:"));
+		System.out.println(String.format("%-15s"+Firstname+", "+Lastname, "Name:"));
+		System.out.println(String.format("%-15s"+School,"Average:"));
+		System.out.println(String.format("%-15s"+Grade,"Grade:"));
 		
 		userInput.close();
 	}
